@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 //final Color color1;
   @override
   Widget build(BuildContext context) {

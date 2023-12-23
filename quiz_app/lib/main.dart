@@ -1,15 +1,12 @@
-
 import 'package:flutter/material.dart';
-import 'package:quiz_app/start_screen.dart';
+import 'start_screen.dart';
+
 void main() {
   runApp(
-
-   const  MaterialApp(
-      home: 
-    Scaffold(body:StartScreen(
-//
-//Colors.pink,
-
-    ) ),)
+     MaterialApp(
+      home: Scaffold(
+        body: Container(child: StartScreen()),
+      ),
+    ),
   );
 }

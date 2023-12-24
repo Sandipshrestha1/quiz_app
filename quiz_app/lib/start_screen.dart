@@ -9,13 +9,13 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+            color: const Color.fromARGB(255, 199, 162, 158),
+          ),
 
-
-               Image.asset(
-                 'assets/images/quiz-logo.png',
-                 width: 300,
-                 color:const Color.fromARGB(255, 199, 162, 158),
-               ),
+          //try not to use opacity
           // Opacity(
           //   opacity: 0.5,
           //   child: Image.asset(
@@ -35,7 +35,9 @@ class StartScreen extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              //...
+            },
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),

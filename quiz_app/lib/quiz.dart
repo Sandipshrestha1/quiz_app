@@ -11,7 +11,15 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
 // we cann't use var because var restrict   activescreen 
 //  var activeScreen = const StartScreen();
- Widget  activeScreen = const StartScreen();
+ Widget?  activeScreen ;
+ // StartScreen(switchScreen);
+
+@override
+void initState() {
+activeScreen= StartScreen(switchScreen);
+
+    super.initState();
+  }
 
 void switchScreen() {
 setState(() {

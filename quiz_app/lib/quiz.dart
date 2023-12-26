@@ -56,9 +56,10 @@ if (activeScreen == 'questions-screen') {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen == 'start-screen'
-              ? StartScreen(switchScreen)
-              : const QuestionsScreen(),
+           child: screenWidget, 
+          //activeScreen == 'start-screen'
+          //     ? StartScreen(switchScreen)
+          //     : const QuestionsScreen(),
         ),
       ),
     );

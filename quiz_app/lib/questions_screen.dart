@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/answer_button.dart';
+import 'package:quiz_app/questions.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
@@ -11,25 +12,34 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: double.infinity,
+    final currentQuestion = questions[0];
+
+    return SizedBox(
+      width: double.infinity,
+      child: Container(
+        margin: const EdgeInsets.all(20),
         child: Column(
           // mainAxisSize: MainAxisSize.min,
-
+      
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              "The question ...",
-              style: TextStyle(
+            Text(
+              currentQuestion.text,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 24,
+
               ),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
-            AnswerButton(answerText: "Answer 1", onTap: () {}),
-            AnswerButton(answerText: "Answer 2", onTap: () {}),
-            AnswerButton(answerText: "Answer 3", onTap: () {}),
+            // ... means Spreading values
+            // We are using this because we cannot use list inside onother list
+           ... currentQuestion.answers.map((answer){
+              return AnswerButton( answerText: answer , onTap: () {});
+            }),
+          
           ],
         ),
       ),

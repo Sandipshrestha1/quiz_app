@@ -10,9 +10,21 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+    //currentQuestionIndex = currentQuestionIndex +1;
+    // both code  meaning is same
+    //currentQuestionIndex += 1;
+
+    setState(() {
+      currentQuestionIndex++; // increments the value by 1
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[currentQuestionIndex];
 
     return SizedBox(
       width: double.infinity,
@@ -20,7 +32,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
         margin: const EdgeInsets.all(20),
         child: Column(
           // mainAxisSize: MainAxisSize.min,
-      
+
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -29,17 +41,15 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 24,
-
               ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
             // ... means Spreading values
             // We are using this because we cannot use list inside onother list
-           ... currentQuestion.getShuffledAnswers().map((answer) {
-              return AnswerButton( answerText: answer , onTap: () {});
+            ...currentQuestion.getShuffledAnswers().map((answer) {
+              return AnswerButton(answerText: answer, onTap: answerQuestion,);
             }),
-          
           ],
         ),
       ),

@@ -10,6 +10,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  final List<String> selectedAnswers = [];
   var activeScreen = 'start-screen';
 
 // we cann't use var because var restrict   activescreen
@@ -31,15 +32,19 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
+
   @override
-Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
+    Widget screenWidget = StartScreen(switchScreen);
 
-
-Widget screenWidget = StartScreen(switchScreen);
-
-if (activeScreen == 'questions-screen') {
-  screenWidget = const QuestionsScreen();
-}
+    if (activeScreen == 'questions-screen') {
+      screenWidget = QuestionsScreen(
+        onSelectAnswer: chooseAnswer, onSelectedAnswer: (String answer) {  },
+      );
+    }
 //var screenWidget = StartScreen(switchScreen);
 
     return MaterialApp(
@@ -56,7 +61,7 @@ if (activeScreen == 'questions-screen') {
               end: Alignment.bottomRight,
             ),
           ),
-           child: screenWidget, 
+          child: screenWidget,
           //activeScreen == 'start-screen'
           //     ? StartScreen(switchScreen)
           //     : const QuestionsScreen(),

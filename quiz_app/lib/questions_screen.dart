@@ -4,13 +4,11 @@ import 'package:quiz_app/questions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen(
-      {super.key,
-      required this.onSelectedAnswer,
-      required void Function(String answer) onSelectAnswer});
+  const QuestionsScreen({super.key,required this.onSelectAnswer,});
+      //required void Function(String answer) onSelectAnswer});
   //required void Function(String answer) onSelectAnswer
 
-  final void Function(String answer) onSelectedAnswer;
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
@@ -19,14 +17,21 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion(String selectedAnswer) {
-    widget.onSelectedAnswer(selectedAnswer);
-    //currentQuestionIndex = currentQuestionIndex +1;
-    //both code  meaning is same
-    //currentQuestionIndex += 1;
+  // void answerQuestion(String selectedAnswer) {
+  //   widget.onSelectAnswer(selectedAnswer);
+  //   //currentQuestionIndex = currentQuestionIndex +1;
+  //   //both code  meaning is same
+  //   //currentQuestionIndex += 1;
 
+  //   setState(() {
+  //     currentQuestionIndex++; // increments the value by 1
+  //   });
+  // }
+
+  void answerQuestion( String selectedAnswer) {
+    widget.onSelectAnswer('.....');
     setState(() {
-      currentQuestionIndex++; // increments the value by 1
+      currentQuestionIndex++;
     });
   }
 

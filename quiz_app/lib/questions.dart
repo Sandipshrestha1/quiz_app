@@ -10,7 +10,7 @@ const questions = [
     [
       'By combining Widgets in code ',
       'By combining widgets in a visual editor',
-      'By defining widgets in  config files',
+      'By defining widgets in config files',
       'By using XCode for ios and Android Studio for Android'
     ],
   ),

@@ -31,20 +31,26 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(" You answer x out of Y questions correctly"),
-        const SizedBox(
-          height: 30,
+    return SizedBox(
+      width: double.infinity,
+      child: Container(
+        margin: const EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(" You answer x out of Y questions correctly"),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text("List of answers and questions ...."),
+            const SizedBox(height: 30),
+            TextButton(
+              onPressed: () {},
+              child: const Text("Restart Quiz"),
+            ),
+          ],
         ),
-        const Text("List of answers and questions ...."),
-        const SizedBox(height: 30),
-        TextButton(
-          onPressed: () {},
-          child: const Text("Restart Quiz"),
-        ),
-      ],
+      ),
     );
   }
 }

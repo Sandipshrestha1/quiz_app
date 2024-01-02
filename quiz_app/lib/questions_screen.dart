@@ -60,7 +60,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             const SizedBox(height: 30),
             // ... means Spreading values
             // We are using this because we cannot use list inside onother list
-            ...currentQuestion.getShuffledAnswers().map(
+            ...currentQuestion.shuffledAnswers.map(
               (answer) {
                 return AnswerButton(
                   answerText: answer,

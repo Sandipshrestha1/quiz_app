@@ -5,7 +5,8 @@ import 'questions_summary.dart';
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
-    required this.chosenAnswers,
+    required this.chosenAnswers, required void Function() onRestart,
+    
   });
 
   final List<String> chosenAnswers;
@@ -37,6 +38,11 @@ class ResultsScreen extends StatelessWidget {
     final numCorrectQuestions = summaryData.where((data) {
       return data['user_answer'] == data['correct_answer'];
     }).length;
+
+// above line can be written  like this
+    // final numCorrectQuestions = summaryData.where((data)  =>
+    //      data['user_answer'] == data['correct_answer'];
+    // ).length;
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -56,7 +62,7 @@ class ResultsScreen extends StatelessWidget {
             //const Text("List of answers and questions ...."),
             const SizedBox(height: 30),
             TextButton(
-              onPressed: () {},
+              onPressed: (){},
               child: const Text(
                 "Restart Quiz",
                 style: TextStyle(fontSize: 24, color: Colors.white),

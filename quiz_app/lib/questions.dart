@@ -32,8 +32,9 @@ const questions = [
       "None of the above",
     ],
   ),
-  QuizQuestion("How should you update data inside of StatefulWidgets? ", [
-    'By calling stState()',
+  QuizQuestion(
+    "How should you update data inside of StatefulWidgets? ", [
+    'By calling setState()',
     "By calling updateData()",
     "By calling updateUI()",
     "By calling updateState()"

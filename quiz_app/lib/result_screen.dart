@@ -13,10 +13,8 @@ class ResultsScreen extends StatelessWidget {
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
-
     for (var i = 0; i < chosenAnswers.length; i++)
 // or i = i+1
-
     {
       //loop body
       summary.add(
